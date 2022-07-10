@@ -1,19 +1,19 @@
 import numpy as np
 class Dice:
 	def __init__(self):
-		self.skill_roll = None
 		self.base_roll = None
+		self.skill_roll = None
 		self.gear_roll = None
 		self.pushed = False
 
 	def roll_all_dice(self, n_base, n_skill, n_gear):
 		self.pushed = False
-		self.base_roll = np.random.randint(6, size = n_base)
-		self.skill_roll = np.random.randint(6, size = n_skill)
-		self.gear_roll = np.random.randint(6, size = n_gear)
+		self.base_roll = np.random.randint(6, size = n_base).tolist()
+		self.skill_roll = np.random.randint(6, size = n_skill).tolist()
+		self.gear_roll = np.random.randint(6, size = n_gear).tolist()
 
 	def push_the_roll(self):
-		if(self.pushed == False)
+		if(self.pushed == False):
 			self.pushed = True
 			for i in range(len(self.base_roll)):
 				if( self.base_roll[i] != 5 and self.base_roll[i] != 0):
@@ -38,5 +38,5 @@ class Dice:
 	def get_mutation_results(self):
 		return(self.base_roll.count(0))
 			
-	def get_gear_break(self)
+	def get_gear_break(self):
 		return(self.gear_roll.count(0))
